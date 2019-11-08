@@ -16,6 +16,6 @@ jobs:
           echo ${{ github.ref }} | cut -d '/' -f 3 > DOCKER_TAG
       - name: Build and push docker image
         run: |
-          docker build --tag <JŪSŲ DOCKERHUB Mentel/cloud-lab:$(cat DOCKER_TAG) .
+          docker build --tag <JŪSŲ mentel/cloud-lab:$(cat DOCKER_TAG) .
           docker login --username ${{ secrets.DOCKER_USER }} --password ${{ secrets.DOCKER_TOKEN }}
-          docker push Mentel/cloud-lab:$(cat DOCKER_TAG)
+          docker push mentel/cloud-lab:$(cat DOCKER_TAG)
